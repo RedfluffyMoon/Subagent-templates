@@ -1,14 +1,18 @@
 # Subagent-templates
 
-Újrafelhasználható Claude Code subagent sablonok: egy `code-reviewer`, egy `debugger` és egy `doc-writer` ügynök, mindhárom `.claude/agents/` formátumban.
+Újrafelhasználható Claude Code subagent sablonok, mindegyik `.claude/agents/` formátumban.
 
-## Mit csinál a 3 ügynök
+## Mit csinálnak az ügynökök
 
 | Ügynök | Feladat | Eszközök |
 |---|---|---|
 | [`code-reviewer`](.claude/agents/code-reviewer.md) | Átnézi a kódot minőség, hibák és jó gyakorlatok szempontjából — csak olvas, nem módosít. | Read, Glob, Grep |
 | [`debugger`](.claude/agents/debugger.md) | Ténylegesen lefuttatja és teszteli a kódot, hibákat keres futásidőben. | Read, Bash, Glob, Grep |
 | [`doc-writer`](.claude/agents/doc-writer.md) | Dokumentációt és README-t ír a meglévő kód alapján. | Read, Write, Edit, Glob, Grep |
+| [`test-writer`](.claude/agents/test-writer.md) | Unit teszteket ír a meglévő kódhoz, a projekt teszt-konvencióit követve. | Read, Write, Edit, Glob, Grep, Bash |
+| [`security-auditor`](.claude/agents/security-auditor.md) | Biztonsági réseket, kitett titkokat és sérülékeny mintákat keres — csak olvas, nem módosít. | Read, Glob, Grep |
+| [`commit-writer`](.claude/agents/commit-writer.md) | A staged változásokból tömör commit üzenetet ír, a projekt stílusát követve. | Read, Bash, Glob, Grep |
+| [`dependency-checker`](.claude/agents/dependency-checker.md) | Elavult/sérülékeny függőségeket keres, és konkrét frissítést javasol. | Read, Bash, Glob, Grep |
 
 ## Fontos: hogyan működnek a subagentek a különböző eszközökön
 
